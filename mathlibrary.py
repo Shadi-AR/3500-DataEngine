@@ -18,5 +18,31 @@ class Count:
 
 #----------------- 
 
+#Jarl ###########
+def mean(x):
+    # TODO: Find mean of all the values of set
+
+def variance(x):
+    # TODO: Find the variance
+
+def std_dev(x):
+    # TODO: Find the std. deviation
+
+def per_20(x):
+    # TODO: Find the 20th percentile
+
+def per_40(x):
+    # TODO: Find the 40th percentile
+
+def per_50(x):
+    # TODO: Find the 50th percentile
+
+def per_60(x):
+    # TODO: Find the 60th percentile
+
+def per_80(x):
+    # TODO: Find the 80th percentile
+
+#-------------------
 c = Count.count(myArray)
 print(c)
