@@ -110,36 +110,45 @@ def maximum(array):
 #----------------- 
 
 #Jarl ###########
-def mean(x):
-    pass 
-    # TODO: Find mean of all the values of set
 
-def variance(x):
-    pass
-    # TODO: Find the variance
+# finds the arithmetic mean of a list of numerical values
+def mean(data_list):
+    mean_sum = 0
+    mean_num = len(data_list)
+    for i in data_list:
+        mean_sum += i
+    return mean_sum / mean_num
+ 
+# finds the variance of a list of values
+def variance(data_list, mean):
+    var_sum = 0
+    for i in data_list:
+        var_sum += (i - mean)**2
+    return var_sum / (len(data_list) - 1)
 
-def std_dev(x):
-    pass
-    # TODO: Find the std. deviation
+# finds the variance of a list of values by taking in the variance
+# returned by the above function
+def std_dev(var):
+    return sqrt(var)
 
-def per_20(x):
-    pass
-    # TODO: Find the 20th percentile
+# finds the 20th percentile of a list
+def per_20(data_list):
+    return data_list[0.2 * len(data_list) - 1]
 
-def per_40(x):
-    pass
-    # TODO: Find the 40th percentile
+# finds the 40th percentile of a list
+def per_40(data_list):
+    return data_list[0.4 * len(data_list) - 1]
 
-def per_50(x):
-    pass
-    # TODO: Find the 50th percentile
+# finds the 50th percentile of a list
+def per_50(data_list):
+    return data_list[0.5 * len(data_list) - 1]
 
-def per_60(x):
-    pass
-    # TODO: Find the 60th percentile
+# finds the 60th percentile of a list
+def per_60(data_list):
+    return data_list[0.6 * len(data_list) - 1]
 
-def per_80(x):
-    pass
-    # TODO: Find the 80th percentile
+# finds the 80th percentile of a list
+def per_80(data_list):
+    return data_list[0.8 * len(data_list) - 1]
 
 #-------------------
