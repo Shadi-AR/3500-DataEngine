@@ -129,26 +129,26 @@ def variance(data_list, mean):
 # finds the variance of a list of values by taking in the variance
 # returned by the above function
 def std_dev(var):
-    return sqrt(var)
+    return math.sqrt(var)
 
 # finds the 20th percentile of a list
 def per_20(data_list):
-    return data_list[0.2 * len(data_list) - 1]
+    return data_list[math.floor(0.2 * len(data_list) - 1)]
 
 # finds the 40th percentile of a list
 def per_40(data_list):
-    return data_list[0.4 * len(data_list) - 1]
+    return data_list[math.floor(0.4 * len(data_list) - 1)]
 
 # finds the 50th percentile of a list
 def per_50(data_list):
-    return data_list[0.5 * len(data_list) - 1]
+    return data_list[math.floor(0.5 * len(data_list) - 1)]
 
 # finds the 60th percentile of a list
 def per_60(data_list):
-    return data_list[0.6 * len(data_list) - 1]
+    return data_list[math.floor(0.6 * len(data_list) - 1)]
 
 # finds the 80th percentile of a list
 def per_80(data_list):
-    return data_list[0.8 * len(data_list) - 1]
+    return data_list[math.floor(0.8 * len(data_list) - 1)]
 
 #-------------------
