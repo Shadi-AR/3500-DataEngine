@@ -7,10 +7,13 @@
 #Alonso ##########
 
 # place holder sorting
-def orderList(array):
+def orderList(gen_array):
     # TODO : implement sorting algo
-    array = sorted(array)
-    return array
+    new_list = []
+    for item in gen_array:
+        new_list.append(item)
+    new_list = sorted(new_list)
+    return new_list
 
 #generator to prevent loading all of the object at once
 def gen_objects(object):
@@ -26,22 +29,20 @@ def isOfNumber(numbers):
         if not isinstance(item, (float, int)):
             raise Exception("A NaN was found. Please use numbers.")
 
-def count(array):
+def count(gen_list):
     # enumerate(x) returns an index starting at 1 and the item in the list
-    gen_array_item = gen_objects(array)
-    for count, item in enumerate(gen_array_item, start=1):
+    for count, item in enumerate(gen_list, start=1):
         pass
     return count #all I need is the final count
 
 # Return a list with only unique values. 
 # Takes advantage of set's hashing functionality
-def unique(array):
+def unique(gen_array):
     
     # Create an empty set
     unique_array = set()
     #get iterable array generator object
-    gen_array_item = gen_objects(array)
-    for item in (gen_array_item):
+    for item in (gen_array):
         unique_array.add(item) # add item to set
     return list(unique_array) # return set as a list
 
@@ -59,12 +60,11 @@ def median(array):
         median = array[middle_index]
         return median
 
-def mode(array):
-    gen_array_item = gen_objects(array)
+def mode(gen_array):
 
     # empty dictionary
     dictionary = {} # {value : occurence}
-    for key_int in gen_array_item:
+    for key_int in gen_array:
         isOfNumber(key_int) # check if dictionary keys are numbers
         if dictionary.get(key_int) is None: # if key does not exist yet
             # create dictionary key and set to one occurence
@@ -72,35 +72,33 @@ def mode(array):
         else:
             # increase the occurence if key exists
             dictionary[key_int] = dictionary.get(key_int)+1 
-    dict_list = list(dictionary.values())
+    dict_values = list(dictionary.values())
     dict_keys = list(dictionary.keys())
-
+    max_keys = [key for key, value in dictionary.items() if value == max(dictionary.values())]
+    most_occurence = maximum(dict_values)
     mode_array = []
-    for item in dict_keys:
-        pass
+    thing = dictionary.item(5)
     
     # code for one mode (the first one that appears)
     #occurences = maximum(dict_list)
     #modes = list(dictionary.keys())[dict_list.index(occurences)]
-    return array
+    return thing
 
-def minimum(array):
-    gen_array_item = gen_objects(array)
-    number = next(gen_array_item)
+def minimum(gen_array):
+    number = next(gen_array)
     isOfNumber(number) # check if the first array item is a number
     min_val = number
-    for number in gen_array_item:
+    for number in gen_array:
         isOfNumber(number)
         if min_val > number:
             min_val = number
     return min_val
 
-def maximum(array):
-    gen_array_item = gen_objects(array)
-    number = next(gen_array_item)
+def maximum(gen_array):
+    number = next(gen_array)
     isOfNumber(number) # check if the first array item is a number
     max_val = number
-    for number in gen_array_item:
+    for number in gen_array:
         isOfNumber(number)
         if max_val < number:
             max_val = number
